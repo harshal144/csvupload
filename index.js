@@ -5,7 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 var multer = require('multer');
 var csv = require('csvtojson');
-
+const port =process.env.PORT || 3000;
 // require('dotenv/config');
 require('dotenv').config();
 
@@ -53,3 +53,6 @@ app.listen('3000' || process.env.PORT, err => {
         throw err
     console.log('Server started!')
 });
+app.listen(port,()=>{
+    console.log(`listening to the port no at ${port}`);
+})
